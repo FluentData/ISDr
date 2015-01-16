@@ -155,15 +155,16 @@ downloadISD <- function(state, years){
   db.folder <- normalizePath(system.file("database" , package = "ISDr"))
   
   # create file path for csv document with station information
-  stations.file <- paste0(db.folder, "/stations.csv")
+  stations.file <- normalizePath(paste0(db.folder, "/stations.csv"))
   
   # download table with staion information
-  download.file("ftp://ftp.ncdc.noaa.gov/pub/data/noaa/ish-history.csv", stations.file)
+  download.file("ftp://ftp.ncdc.noaa.gov/pub/data/noaa/isd-history.csv", stations.file)
+  
   
   setTxtProgressBar(pb, 0.1)
   
   # read in the station information
-  stations.df <- read.csv(stations.file, header = T, colClasses = rep_len("character", 12),
+  stations.df <- read.csv(stations.file, colClasses = "character",
                           stringsAsFactors=F)
   
   # insert decimal into lat and lon columns
