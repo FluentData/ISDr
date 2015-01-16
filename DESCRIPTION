@@ -1,9 +1,9 @@
 Package: ISDr
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Download integrated surface data from the National Climatic Data Center
+Version: 0.1
 Date: 2015-01-07
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Nathan Byers
+Maintainer: Nathan Byers <natebyers@gmail.com>
+Description: Downloads weather data into SQLite database, by state and year.
+License: GPL-3
