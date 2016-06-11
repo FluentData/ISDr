@@ -1,18 +1,17 @@
-downloadISD <- function(usaf, wban, year, history = getISDhistory(),
+#' @export
+downloadISD <- function(usaf, wban, year, history,
                         parameters){
-  # usaf = 720266; wban = 54809; year = 2015
-  if(!usaf %in% history$USAF | !wban %in% history$WBAN){
-    stop(paste(usaf, wban, sep = "-"), " is not a station")
-  }
+  # usaf = 720266; wban = 54809; year = 2015; parameters = c("USAF", "WBAN", "DATE", "TIME", "LATITUDE", "LONGITUDE", "WIND_DIR", "WIND_SPEED", "TEMP", "DEW_POINT_TEMP", "SEA_LEVEL_PRESSURE")
   
   formats <- ISD_documentation$FIXED_FORMAT
+  short_names <- ISD_documentation$SHORT_NAME
   
   if(!missing(parameters)){
-    if(sum(!parameters %in% formats) > 0){
+    if(sum(!parameters %in% short_names) > 0){
       stop("Invalid parameter(s)")
     }
     
-    skip <- !formats %in% parameters
+    skip <- !short_names %in% parameters
     
     skip_length <- ISD_documentation[skip, "LENGTH"]
     
@@ -22,6 +21,7 @@ downloadISD <- function(usaf, wban, year, history = getISDhistory(),
   
     }else{
     formats <- ISD_documentation$FIXED_FORMAT
+    parameters <- ISD_documentation$SHORT_NAME
   }
   
   url <- paste0("ftp://ftp.ncdc.noaa.gov/pub/data/noaa/", year, "/", usaf,
@@ -34,6 +34,7 @@ downloadISD <- function(usaf, wban, year, history = getISDhistory(),
   if(class(try_download) == "try-error"){
     error_df <- data.frame(TYPE = "download_error",
                            MESSAGE = attr(try_download, "condition")$message,
+                           USAF = usaf, WBAN = wban, YEAR = year,
                            DATE_TIME = Sys.time(),
                            stringsAsFactors = FALSE)
     class(error_df) <- c("data.frame", "error")
@@ -47,6 +48,7 @@ downloadISD <- function(usaf, wban, year, history = getISDhistory(),
   if(class(try_unzip) == "try-error"){
       error_df <- data.frame(TYPE = "unzip_error",
                              MESSAGE = attr(try_unzip, "condition")$message,
+                             USAF = usaf, WBAN = wban, YEAR = year,
                              DATE_TIME = Sys.time(),
                              stringsAsFactors = FALSE)
     class(error_df) <- c("data.frame", "error")
@@ -60,13 +62,38 @@ downloadISD <- function(usaf, wban, year, history = getISDhistory(),
   if(class(try_read_fortran) == "try-error"){
     error_df <- data.frame(TYPE = "read_fortran_error",
                            MESSAGE = attr(try_unzip, "condition")$message,
-                           DATE_TIME = Sys.time(),
+                           USAF = usaf, WBAN = wban, YEAR = year,
+                           DOWNLOAD_TIME = Sys.time(),
                            stringsAsFactors = FALSE)
     class(error_df) <- c("data.frame", "error")
     return(error_df)
   }
   
-  df
+  names(df) <- parameters
+  
+  df <- addMissing(df)
+  
+  return(df)
 
 }
+
+addMissing <- function(data, doc = ISD_documentation){
+  doc <- doc %>%
+    filter(SHORT_NAME %in% names(data), !is.na(MISSING))
+  for(i in doc$SHORT_NAME){
+    # i = doc$SHORT_NAME[7]
+    doc_row <- doc[doc$SHORT_NAME == i, ]
+    if(doc_row$CLASS == "numeric"){
+      missing <- as.numeric(doc_row$MISSING)
+      if(!is.na(doc_row$SCALING_FACTOR)){
+        missing <- missing/doc_row$SCALING_FACTOR
+      }
+    }
+    nas <- as.character(data[[i]]) == as.character(missing) 
+    data[nas, i] <- NA
+  }
+  data
+}
+
+
 

@@ -6,3 +6,4 @@ for(i in c("MIN", "MAX", "MISSING")){
 ISD_lookup <- read.csv("data-raw/ISD_lookup.csv", stringsAsFactors = FALSE)
 
 devtools::use_data(ISD_documentation, ISD_lookup, overwrite = TRUE)
+devtools::use_data(ISD_documentation, ISD_lookup, internal = TRUE, overwrite = TRUE)

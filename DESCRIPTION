@@ -9,5 +9,6 @@ Description: Download integrated surface data from the National Climatic Data Ce
 License: GPL-3
 Depends:
     dplyr,
-    R.utils
+    R.utils,
+    RSQLite
 RoxygenNote: 5.0.1
