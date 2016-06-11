@@ -1,0 +1,187 @@
+FIELD,CODE,DESCRIPTION
+DATA_SOURCE,1,"USAF SURFACE HOURLY observation, candidate for merge with NCEI SURFACE HOURLY"
+DATA_SOURCE,2,"NCEI SURFACE HOURLY observation, candidate for merge with USAF SURFACE HOURLY"
+DATA_SOURCE,3,USAF SURFACE HOURLY/NCEI SURFACE HOURLY merged observation
+DATA_SOURCE,4,USAF SURFACE HOURLY observation
+DATA_SOURCE,5,NCEI SURFACE HOURLY observation
+DATA_SOURCE,6,ASOS/AWOS observation from NCEI
+DATA_SOURCE,7,ASOS/AWOS observation merged with USAF SURFACE HOURLY observation
+DATA_SOURCE,8,MAPSO observation (NCEI)
+DATA_SOURCE,A,USAF SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation
+DATA_SOURCE,B,NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation
+DATA_SOURCE,C,USAF SURFACE HOURLY/NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation
+DATA_SOURCE,D,USAF SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation
+DATA_SOURCE,E,NCEI SURFACE HOURLY/NCEI HOURLY PRECIPITATION merged observation
+DATA_SOURCE,F,Form OMR/1001 – Weather Bureau city office (keyed data)
+DATA_SOURCE,G,"SAO surface airways observation, pre-1949 (keyed data)"
+DATA_SOURCE,H,"SAO surface airways observation, 1965-1981 format/period (keyed data)"
+DATA_SOURCE,I,Climate Reference Network observation
+DATA_SOURCE,J,Cooperative Network observation
+DATA_SOURCE,K,Radiation Network observation
+DATA_SOURCE,L,Data from Climate Data Modernization Program (CDMP) data source
+DATA_SOURCE,M,Data from National Renewable Energy Laboratory (NREL) data source
+DATA_SOURCE,N,NCAR / NCEI cooperative effort (various national datasets)
+DATA_SOURCE,O,Summary observation created by NCEI using hourly observations that may not share the same data source flag
+DATA_SOURCE,9,Missing
+GEO_REPORT,AERO,Aerological report
+GEO_REPORT,AUST,Dataset from Australia
+GEO_REPORT,AUTO,Report from an automatic station
+GEO_REPORT,BOGUS,Bogus report
+GEO_REPORT,BRAZ,Dataset from Brazil
+GEO_REPORT,COOPD,US Cooperative Network summary of day report
+GEO_REPORT,COOPS,US Cooperative Network soil temperature report
+GEO_REPORT,CRB,Climate Reference Book data from CDMP
+GEO_REPORT,CRN05,"Climate Reference Network report, with 5-minute reporting interval"
+GEO_REPORT,CRN15,"Climate Reference Network report, with 15-minute reporting interval"
+GEO_REPORT,FM-12,SYNOP Report of surface observation form a fixed land station
+GEO_REPORT,FM-13,SHIP Report of surface observation from a sea station
+GEO_REPORT,FM-14,SYNOP MOBIL Report of surface observation from a mobile land station
+GEO_REPORT,FM-15,METAR Aviation routine weather report
+GEO_REPORT,FM-16,SPECI Aviation selected special weather report
+GEO_REPORT,FM-18,BUOY Report of a buoy observation
+GEO_REPORT,GREEN,Dataset from Greenland
+GEO_REPORT,MESOH,Hydrological observations from MESONET operated civilian or government agency
+GEO_REPORT,MESOS,MESONET operated civilian or government agency
+GEO_REPORT,MESOW,Snow observations from MESONET operated civilian or government agency
+GEO_REPORT,MEXIC,Dataset from Mexico
+GEO_REPORT,NSRDB,National Solar Radiation Data Base
+GEO_REPORT,PCP15,US 15-minute precipitation network report
+GEO_REPORT,PCP60,US 60-minute precipitation network report
+GEO_REPORT,S-S-A,"Synoptic, airways, and auto merged report"
+GEO_REPORT,SA-AU,Airways and auto merged report
+GEO_REPORT,SAO,Airways report (includes record specials)
+GEO_REPORT,SAOSP,Airways special report (excluding record specials)
+GEO_REPORT,SHEF,Standard Hydrologic Exchange Format
+GEO_REPORT,SMARS,Supplementary airways station report
+GEO_REPORT,SOD,Summary of day report from U.S. ASOS or AWOS station
+GEO_REPORT,SOM,Summary of month report from U.S. ASOS or AWOS station
+GEO_REPORT,SURF,Surface Radiation Network report
+GEO_REPORT,SY-AE,Synoptic and aero merged report
+GEO_REPORT,SY-AU,Synoptic and auto merged report
+GEO_REPORT,SY-MT,Synoptic and METAR merged report
+GEO_REPORT,SY-SA,Synoptic and airways merged report
+GEO_REPORT,WBO,Weather Bureau Office
+GEO_REPORT,WNO,Washington Naval Observatory
+GEO_REPORT,99999,Missing
+NCEI_QC,A,"Data value flagged as suspect, but accepted as good value."
+NCEI_QC,U,Data value replaced with edited value.
+NCEI_QC,P,"Data value not originally flagged as suspect, but replaced by validator."
+NCEI_QC,I,"Data value not originally in data, but inserted by validator."
+NCEI_QC,M,Manual change made to value based on information provided by NWS or FAA.
+NCEI_QC,C,"Temperature and dew point received from Automated Weather Observing Systems (AWOS) are reported in whole degrees Celsius.  Automated QC flags these values, but they are accepted as valid."
+NCEI_QC,R,Data value replaced with value computed by NCEI software.
+WIND_DIR_QUALITY,0,Passed gross limits check 
+WIND_DIR_QUALITY,1,Passed all quality control checks
+WIND_DIR_QUALITY,2,Suspect
+WIND_DIR_QUALITY,3,Erroneous
+WIND_DIR_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+WIND_DIR_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+WIND_DIR_QUALITY,6,"Suspect, data originate from an NCEI data source"
+WIND_DIR_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+WIND_DIR_QUALITY,9,Passed gross limits check if element is present
+WIND_TYPE,A,Abridged Beaufort
+WIND_TYPE,B,Beaufort
+WIND_TYPE,C,Calm
+WIND_TYPE,H,5-Minute Average Speed
+WIND_TYPE,N,Normal
+WIND_TYPE,R,60-Minute Average Speed
+WIND_TYPE,Q,Squall
+WIND_TYPE,T,180 Minute Average Speed
+WIND_TYPE,V,Variable
+WIND_TYPE,9,Missing
+WIND_SPEED_QUALITY,0,Passed gross limits check
+WIND_SPEED_QUALITY,1,Passed all quality control checks
+WIND_SPEED_QUALITY,2,Suspect
+WIND_SPEED_QUALITY,3,Erroneous
+WIND_SPEED_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+WIND_SPEED_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+WIND_SPEED_QUALITY,6,"Suspect, data originate from an NCEI data source"
+WIND_SPEED_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+WIND_SPEED_QUALITY,9,Passed gross limits check if element is present
+SKY_CEILING_QUALITY,0,Passed gross limits check
+SKY_CEILING_QUALITY,1,Passed all quality control checks
+SKY_CEILING_QUALITY,2,Suspect
+SKY_CEILING_QUALITY,3,Erroneous
+SKY_CEILING_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+SKY_CEILING_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+SKY_CEILING_QUALITY,6,"Suspect, data originate from an NCEI data source"
+SKY_CEILING_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+SKY_CEILING_QUALITY,9,Passed gross limits check if element is present
+SKY_CEILING_METHOD,A,Aircraft
+SKY_CEILING_METHOD,B,Balloon
+SKY_CEILING_METHOD,C,Statistically derived
+SKY_CEILING_METHOD,D,Persistent cirriform ceiling (pre-1950 data)
+SKY_CEILING_METHOD,E,Estimated
+SKY_CEILING_METHOD,M,Measured
+SKY_CEILING_METHOD,P,Precipitation ceiling (pre-1950 data)
+SKY_CEILING_METHOD,R,Radar
+SKY_CEILING_METHOD,S,ASOS augmented
+SKY_CEILING_METHOD,U,Unknown ceiling (pre-1950 data)
+SKY_CEILING_METHOD,V,Variable ceiling (pre-1950 data)
+SKY_CEILING_METHOD,W,Obscured
+SKY_CEILING_METHOD,9,Missing
+CAVOK,N,No
+CAVOK,Y,Yes
+CAVOK,9,Missing
+VISIBILITY_DIST_QUALITY,0,Passed gross limits check
+VISIBILITY_DIST_QUALITY,1,Passed all quality control checks
+VISIBILITY_DIST_QUALITY,2,Suspect
+VISIBILITY_DIST_QUALITY,3,Erroneous
+VISIBILITY_DIST_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+VISIBILITY_DIST_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+VISIBILITY_DIST_QUALITY,6,"Suspect, data originate from an NCEI data source"
+VISIBILITY_DIST_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+VISIBILITY_DIST_QUALITY,9,Passed gross limits check if element is present
+VISIBILITY_VARIABLE,N,Not variable
+VISIBILITY_VARIABLE,V,Variable
+VISIBILITY_VARIABLE,9,Missing
+VISIBILITY_VARIABLE_QUALITY,0,Passed gross limits check
+VISIBILITY_VARIABLE_QUALITY,1,Passed all quality control checks
+VISIBILITY_VARIABLE_QUALITY,2,Suspect
+VISIBILITY_VARIABLE_QUALITY,3,Erroneous
+VISIBILITY_VARIABLE_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+VISIBILITY_VARIABLE_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+VISIBILITY_VARIABLE_QUALITY,6,"Suspect, data originate from an NCEI data source"
+VISIBILITY_VARIABLE_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+VISIBILITY_VARIABLE_QUALITY,9,Passed gross limits check if element is present
+TEMP_QUALITY,0,Passed gross limits check
+TEMP_QUALITY,1,Passed all quality control checks
+TEMP_QUALITY,2,Suspect
+TEMP_QUALITY,3,Erroneous
+TEMP_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+TEMP_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+TEMP_QUALITY,6,"Suspect, data originate from an NCEI data source"
+TEMP_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+TEMP_QUALITY,9,Passed gross limits check if element is present
+TEMP_QUALITY,A,"Data value flagged as suspect, but accepted as a good value"
+TEMP_QUALITY,C,"Temperature and dew point received from Automated Weather Observing System (AWOS) are reported in whole degrees Celsius. Automated QC flags these values, but they are accepted as valid."
+TEMP_QUALITY,I,"Data value not originally in data, but inserted by validator"
+TEMP_QUALITY,M,Manual changes made to value based on information provided by NWS or FAA
+TEMP_QUALITY,P,"Data value not originally flagged as suspect, but replaced by validator"
+TEMP_QUALITY,R,Data value replaced with value computed by NCEI software
+TEMP_QUALITY,U,Data value replaced with edited value
+DEW_POINT_TEMP_QUALITY,0,Passed gross limits check
+DEW_POINT_TEMP_QUALITY,1,Passed all quality control checks
+DEW_POINT_TEMP_QUALITY,2,Suspect
+DEW_POINT_TEMP_QUALITY,3,Erroneous
+DEW_POINT_TEMP_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+DEW_POINT_TEMP_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+DEW_POINT_TEMP_QUALITY,6,"Suspect, data originate from an NCEI data source"
+DEW_POINT_TEMP_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+DEW_POINT_TEMP_QUALITY,9,Passed gross limits check if element is present
+DEW_POINT_TEMP_QUALITY,A,"Data value flagged as suspect, but accepted as a good value"
+DEW_POINT_TEMP_QUALITY,C,"Temperature and dew point received from Automated Weather Observing System (AWOS) are reported in whole degrees Celsius. Automated QC flags these values, but they are accepted as valid."
+DEW_POINT_TEMP_QUALITY,I,"Data value not originally in data, but inserted by validator"
+DEW_POINT_TEMP_QUALITY,M,Manual changes made to value based on information provided by NWS or FAA
+DEW_POINT_TEMP_QUALITY,P,"Data value not originally flagged as suspect, but replaced by validator"
+DEW_POINT_TEMP_QUALITY,R,Data value replaced with value computed by NCEI software
+DEW_POINT_TEMP_QUALITY,U,Data value replaced with edited value
+SEA_LEVEL_PRESSURE_QUALITY,0,Passed gross limits check
+SEA_LEVEL_PRESSURE_QUALITY,1,Passed all quality control checks
+SEA_LEVEL_PRESSURE_QUALITY,2,Suspect
+SEA_LEVEL_PRESSURE_QUALITY,3,Erroneous
+SEA_LEVEL_PRESSURE_QUALITY,4,"Passed gross limits check , data originate from an NCEI data source"
+SEA_LEVEL_PRESSURE_QUALITY,5,"Passed all quality control checks, data originate from an NCEI data source"
+SEA_LEVEL_PRESSURE_QUALITY,6,"Suspect, data originate from an NCEI data source"
+SEA_LEVEL_PRESSURE_QUALITY,7,"Erroneous, data originate from an NCEI data source"
+SEA_LEVEL_PRESSURE_QUALITY,9,Passed gross limits check if element is present

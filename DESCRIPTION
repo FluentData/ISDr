@@ -2,8 +2,12 @@ Package: ISDr
 Type: Package
 Title: Download integrated surface data from the National Climatic Data Center
 Version: 0.1
-Date: 2015-01-07
+Date: 2016-06-11
 Author: Nathan Byers
 Maintainer: Nathan Byers <natebyers@gmail.com>
-Description: Downloads weather data into SQLite database, by state and year.
+Description: Download integrated surface data from the National Climatic Data Center
 License: GPL-3
+Depends:
+    dplyr,
+    R.utils
+RoxygenNote: 5.0.1
