@@ -7,5 +7,5 @@ Use the `devtools` package to install:
 ```r
 if(!require("devtools")) install.packages("devtools")
 library("devtools")
-install_github("NateByers/ISDr")
+install_github("FluentData/ISDr")
 ```
