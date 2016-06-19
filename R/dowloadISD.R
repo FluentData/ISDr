@@ -81,13 +81,15 @@ addMissing <- function(data, doc = ISD_documentation){
   doc <- doc %>%
     filter(SHORT_NAME %in% names(data), !is.na(MISSING))
   for(i in doc$SHORT_NAME){
-    # i = doc$SHORT_NAME[7]
+    # i = doc$SHORT_NAME[1]
     doc_row <- doc[doc$SHORT_NAME == i, ]
     if(doc_row$CLASS == "numeric"){
       missing <- as.numeric(doc_row$MISSING)
       if(!is.na(doc_row$SCALING_FACTOR)){
         missing <- missing/doc_row$SCALING_FACTOR
       }
+    }else{
+      missing <- doc_row$MISSING
     }
     nas <- as.character(data[[i]]) == as.character(missing) 
     data[nas, i] <- NA
