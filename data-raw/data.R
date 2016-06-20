@@ -1,5 +1,6 @@
 ISD_documentation <- read.csv("data-raw/ISD_documentation.csv", 
-                              stringsAsFactors = FALSE)
+                              stringsAsFactors = FALSE) 
+ISD_documentation$LONG_NAME <- gsub("\\?", "-", ISD_documentation$LONG_NAME)
 for(i in c("MIN", "MAX", "MISSING")){
   ISD_documentation[[i]] <- sub("c", "", ISD_documentation[[i]])
 }

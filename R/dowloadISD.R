@@ -1,6 +1,13 @@
+#' Download Integrated Surface Data from NOAA
+#' 
+#' @param usaf The USAF master station catalog identifier.
+#' @param wban The NCEI WBAN station identifier.
+#' @param year The year of data.
+#' @param parameters A vector of parameters to download. For a list of parameters, 
+#' see the \code{SHORT_NAME} column in \code{data(ISD_documentation)}. If missing,
+#' all parameters are downloaded.
 #' @export
-downloadISD <- function(usaf, wban, year, history,
-                        parameters){
+downloadISD <- function(usaf, wban, year, parameters){
   # usaf = 720266; wban = 54809; year = 2015; parameters = c("USAF", "WBAN", "DATE", "TIME", "LATITUDE", "LONGITUDE", "WIND_DIR", "WIND_SPEED", "TEMP", "DEW_POINT_TEMP", "SEA_LEVEL_PRESSURE")
   
   formats <- ISD_documentation$FIXED_FORMAT

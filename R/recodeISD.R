@@ -1,3 +1,11 @@
+#' Recode Integrated Surface Data (ISD)
+#'
+#' @description Some columns of the data are coded. The codes can be found in
+#'  \code{data(ISD_lookup)}. This function will replace the codes with the values
+#'  found in the \code{DESCRIPTION} column of \code{ISD_lookup}.
+#'  @param ISD_readings A \code{data.frame} of Integrated Surface Data.
+#'  @param columns A character vector of columns to be recoded. If missing,
+#'  all coded columns will be recoded.
 #' @export
 recodeISD <- function(ISD_readings, columns){
   # ISD_readings = df

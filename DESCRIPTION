@@ -4,8 +4,8 @@ Title: Download integrated surface data from the National Climatic Data Center
 Version: 0.1
 Date: 2016-06-11
 Author: Nathan Byers
-Maintainer: Nathan Byers <natebyers@gmail.com>
-Description: Download integrated surface data from the National Climatic Data Center
+Maintainer: Nathan Byers <nbyers@fluentdatallc.com>
+Description: Download integrated surface data from the National Climatic Data Center at ftp://ftp.ncdc.noaa.gov/pub/data/noaa
 License: GPL-3
 Depends:
     dplyr,
